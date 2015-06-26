@@ -3,7 +3,8 @@
 
 local args = {...}
 
-goofTurtle = os.loadAPI("goofTurtle.lua")
+os.loadAPI("goofTurtle.lua")
+goofTurtle = goofTurtle.lua
 
 local saplingSlot = 15
 local bonemealSlot = 16
