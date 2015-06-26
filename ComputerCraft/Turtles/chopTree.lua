@@ -28,7 +28,7 @@ if turtle.getItemCount(bonemealSlot) < numBonemeal then
   goofTurtle.turn(bonemealDir, 1)
   turtle.select(bonemealSlot)
   turtle.suck(numBonemeal - turtle.getItemCount(bonemealSlot))
-  goofTurtle.turn(goofTurtle.oppositeDir(bonemealDir))
+  goofTurtle.turn(goofTurtle.oppositeDir[bonemealDir])
 end
 
 -- TODO chop down the tree
