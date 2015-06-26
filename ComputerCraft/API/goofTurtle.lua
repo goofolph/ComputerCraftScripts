@@ -30,16 +30,16 @@ local gravSleep = 0.25
 -- time to wait between attacks
 local attackSleep = 0.05
 
-function turn (dir, count)
+function turn(dir, count)
   i = 0
   while i < count do
-    turnTable[dir] ()
+    turnTable[dir]()
     i = i + 1
   end
 end
 
 -- moves the turtle while digging anything in it's way
-function digMove (dir, distance, grav, attack)
+function digMove(dir, distance, grav, attack)
   -- align turtle
   if dir == "left" or dir == "right" then
     turn (dir, 1)
@@ -63,8 +63,8 @@ function digMove (dir, distance, grav, attack)
 
   -- turn back to starting orientation
   if dir == "left" or dir == "right" then
-    turn (oppositeDir[dir], 1)
+    turn(oppositeDir[dir], 1)
   elseif dir == "back" then
-    turn ("right", 2)
+    turn("right", 2)
   end
 end
