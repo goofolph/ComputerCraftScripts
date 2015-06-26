@@ -1,6 +1,8 @@
 -- chopTree.lua
 -- by Goofolph https://github.com/goofolph
 
+-- version = 0.1.0
+
 -- tables for easy function lookups
 digTable = {
   forward = turtle.dig,
@@ -40,25 +42,29 @@ end
 
 -- moves the turtle while digging anything in it's way
 function digMove(dir, distance, grav, attack)
+  local modDir = dir
   -- align turtle
   if dir == "left" or dir == "right" then
     turn (dir, 1)
+    modDir = "forward"
   elseif dir == "back" then
     turn ("left", 2)
+    modDir = "forward"
   end
 
   local i = 0
   while i < distance do
-    while not turtle.forward() do
+    while not moveTable[modDir]() do
       if attack then
         turtle.attack()
         os.sleep(attackSleep)
       end
-      turtle.dig()
+      digTable[modDir]()
       if grav then
         os.sleep(gravSleep)
       end
     end
+    i = i + 1
   end
 
   -- turn back to starting orientation
