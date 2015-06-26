@@ -30,7 +30,7 @@ local gravSleep = 0.25
 -- time to wait between attacks
 local attackSleep = 0.05
 
-local function turn (dir, count)
+function turn (dir, count)
   i = 0
   while i < count do
     turnTable[dir] ()
