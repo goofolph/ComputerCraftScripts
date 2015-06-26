@@ -3,26 +3,26 @@
 
 -- tables for easy function lookups
 digTable = {
-  "forward" = turtle.dig;
-  "down" = turtle.digDown;
-  "up" = turtle.digUp;
+  forward = turtle.dig,
+  down = turtle.digDown,
+  up = turtle.digUp
 }
 moveTable = {
-  "forward" = turtle.forward;
-  "down" = turtle.down;
-  "up" = turtle.up;
+  forward = turtle.forward,
+  down = turtle.down,
+  up = turtle.up
 }
 turnTable = {
-  "right" = turtle.turnRight;
-  "left" = turtle.turnLeft;
+  right = turtle.turnRight,
+  left = turtle.turnLeft
 }
 oppositeDir = {
-  "left" = "right";
-  "right" = "left";
-  "up" = "down";
-  "down" = "up";
-  "forward" = "back";
-  "back" = "forward";
+  left = "right",
+  right = "left",
+  up = "down",
+  down = "up",
+  forward = "back",
+  back = "forward"
 }
 
 -- time to wait for gravity (gravel, sand)
