@@ -1,6 +1,8 @@
 -- chopTree.lua
 -- by Goofolph https://github.com/goofolph
 
+-- version 0.1.0
+
 local args = {...}
 
 os.loadAPI("goofTurtle")
@@ -60,13 +62,21 @@ if not turtle.detect() then
   turtle.place()
 end
 
-turtle.select(saplingSlot)
-while turtle.compare() do
-  turtle.select(bonemealSlot)
-  turtle.place()
-  os.sleep(0.05)
+turtle.select(bonemealSlot)
+while turtle.place() do
+  os.sleep(0.2)
 end
 
--- TODO chop down the tree
+-- chop down the tree
+if turtle.detect() then
+  goofTurtle.digMove("forward", 1, false, false)
+  local height = 1
+  while turtle.detectUp() do
+    goofTurtle.digMove("up", 1, false, false)
+    height = height + 1
+  end
+  goofTurtle.digMove("down", height - 1, false, false)
+  goofTurtle.digMove("back", 1, false, false)
+end
 
 os.unloadAPI("goofTurtle")
