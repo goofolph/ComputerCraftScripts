@@ -1,4 +1,5 @@
 -- Downloads any file from http
+-- by Goofolph https://github.com/goofolph
 
 local args = {...}
 
@@ -17,12 +18,16 @@ if not args[2] then
 end
 local filename = args[2]
 
+-- download file
 download = http.get(url)
+-- check for error
 if download then
+  -- open file
   file = fs.open(filename, "w");
+  -- check for error
   if file then
-    file:write(download.readAll())
-    file:close()
+    file.write(download.readAll())
+    file.close()
     print("download successful")
     return true
   else
