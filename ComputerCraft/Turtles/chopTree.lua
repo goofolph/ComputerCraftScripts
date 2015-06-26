@@ -24,6 +24,13 @@ if turtle.getItemCount(saplingSlot) < numSaplings then
   goofTurtle.turn(goofTurtle.oppositeDir(saplingDir))
 end
 
+if turtle.getItemCount(bonemealSlot) < numBonemeal then
+  goofTurtle.turn(bonemealDir, 1)
+  turtle.select(bonemealSlot)
+  turtle.suck(numBonemeal - turtle.getItemCount(bonemealSlot))
+  goofTurtle.turn(goofTurtle.oppositeDir(bonemealDir))
+end
+
 -- TODO chop down the tree
 
 -- TODO drop off gathered materials
