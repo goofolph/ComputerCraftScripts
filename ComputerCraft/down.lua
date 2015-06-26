@@ -19,7 +19,7 @@ local filename = args[2]
 
 download = http.get(url)
 if download then
-  file = fs.open(filename);
+  file = fs.open(filename, "w");
   if file then
     file:write(download.readAll())
     file:close()
