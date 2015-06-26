@@ -10,4 +10,11 @@ local outputDir = "down"
 local saplingDir = "right"
 local bonemealDir = "left"
 
--- TODO Everything else
+local numSaplings = 4
+local numBonemeal = 64
+
+-- TODO refill inventory
+
+-- TODO chop down the tree
+
+-- TODO drop off gathered materials
