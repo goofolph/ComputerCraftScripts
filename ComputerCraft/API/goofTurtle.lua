@@ -39,7 +39,7 @@ local function turn (dir, count)
 end
 
 -- moves the turtle while digging anything in it's way
-local function digMove (dir, distance, grav, attack)
+function digMove (dir, distance, grav, attack)
   -- align turtle
   if dir == "left" or dir == "right" then
     turn (dir, 1)
