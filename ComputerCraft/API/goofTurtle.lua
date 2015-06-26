@@ -2,21 +2,21 @@
 -- by Goofolph https://github.com/goofolph
 
 -- tables for easy function lookups
-local digTable = {
+digTable = {
   "forward" = turtle.dig,
   "down" = turtle.digDown,
   "up" = turtle.digUp
 }
-local moveTable = {
+moveTable = {
   "forward" = turtle.forward,
   "down" = turtle.down,
   "up" = turtle.up
 }
-local turnTable = {
+turnTable = {
   "right" = turtle.turnRight,
   "left" = turtle.turnLeft
 }
-local oppositeDir = {
+oppositeDir = {
   "left" = "right",
   "right" = "left",
   "up" = "down",
