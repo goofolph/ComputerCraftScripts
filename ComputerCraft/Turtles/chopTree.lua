@@ -33,4 +33,13 @@ end
 
 -- TODO chop down the tree
 
--- TODO drop off gathered materials
+local i = 1
+while i <= 16 do
+  if turtle.getItemCount(i) > 0 then
+    turtle.select(i)
+    if outputDir == "down" then
+      turtle.dropDown();
+    end
+  end
+  i = i + 1
+end
