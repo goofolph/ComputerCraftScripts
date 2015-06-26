@@ -16,23 +16,7 @@ local bonemealDir = "left"
 local numSaplings = 4
 local numBonemeal = 64
 
--- TODO refill inventory
-if turtle.getItemCount(saplingSlot) < numSaplings then
-  goofTurtle.turn(saplingDir, 1)
-  turtle.select(saplingSlot)
-  turtle.suck(numSaplings - turtle.getItemCount(saplingSlot))
-  goofTurtle.turn(goofTurtle.oppositeDir[saplingDir], 1)
-end
-
-if turtle.getItemCount(bonemealSlot) < numBonemeal then
-  goofTurtle.turn(bonemealDir, 1)
-  turtle.select(bonemealSlot)
-  turtle.suck(numBonemeal - turtle.getItemCount(bonemealSlot))
-  goofTurtle.turn(goofTurtle.oppositeDir[bonemealDir], 1)
-end
-
--- TODO chop down the tree
-
+-- unload inventory
 local i = 1
 while i <= 16 do
   if turtle.getItemCount(i) > 0 then
@@ -43,5 +27,23 @@ while i <= 16 do
   end
   i = i + 1
 end
+
+-- refill saplings
+if turtle.getItemCount(saplingSlot) < numSaplings then
+  goofTurtle.turn(saplingDir, 1)
+  turtle.select(saplingSlot)
+  turtle.suck(numSaplings - turtle.getItemCount(saplingSlot))
+  goofTurtle.turn(goofTurtle.oppositeDir[saplingDir], 1)
+end
+
+-- refill bonemeal
+if turtle.getItemCount(bonemealSlot) < numBonemeal then
+  goofTurtle.turn(bonemealDir, 1)
+  turtle.select(bonemealSlot)
+  turtle.suck(numBonemeal - turtle.getItemCount(bonemealSlot))
+  goofTurtle.turn(goofTurtle.oppositeDir[bonemealDir], 1)
+end
+
+-- TODO chop down the tree
 
 os.unloadAPI("goofTurtle")
