@@ -1,7 +1,10 @@
--- chopTree.lua
+------------------------------------------
+-- gTurtle.lua
 -- by Goofolph https://github.com/goofolph
 
--- version = 0.1.0
+-- version 0.1.0
+------------------------------------------
+
 
 -- tables for easy function lookups
 digTable = {
@@ -76,7 +79,7 @@ function digMove(dir, distance, grav, attack)
 end
 
 -- moves the turtle waiting for blockages to move
-function move(dir, distance, attack)
+function ove(dir, distance, attack)
   local modDir = dir
   -- align turtle
   if dir == "left" or dir == "right" then

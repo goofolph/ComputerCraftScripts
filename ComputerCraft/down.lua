@@ -1,5 +1,10 @@
+------------------------------------------
 -- Downloads any file from http
 -- by Goofolph https://github.com/goofolph
+
+-- version 1.0.0
+------------------------------------------
+
 
 local args = {...}
 
