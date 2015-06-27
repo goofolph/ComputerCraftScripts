@@ -74,3 +74,34 @@ function digMove(dir, distance, grav, attack)
     turn("right", 2)
   end
 end
+
+-- moves the turtle waiting for blockages to move
+function move(dir, distance, attack)
+  local modDir = dir
+  -- align turtle
+  if dir == "left" or dir == "right" then
+    turn (dir, 1)
+    modDir = "forward"
+  elseif dir == "back" then
+    turn ("left", 2)
+    modDir = "forward"
+  end
+
+  local i = 0
+  while i < distance do
+    while not moveTable[modDir]() do
+      if attack then
+        turtle.attack()
+        os.sleep(attackSleep)
+      end
+    end
+    i = i + 1
+  end
+
+  -- turn back to starting orientation
+  if dir == "left" or dir == "right" then
+    turn(oppositeDir[dir], 1)
+  elseif dir == "back" then
+    turn("right", 2)
+  end
+end
