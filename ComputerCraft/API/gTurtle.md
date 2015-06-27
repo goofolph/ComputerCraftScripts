@@ -1,9 +1,12 @@
-# goofTurtle.lua
+# gTurtle.lua #
 
 API for common functions used in many of my turtle scripts.
 
 To load add this line at the beginning of any program.
 
-Don't keep the .lua extension
+Note: Save as `gTurtle` not `gTurtle.lua`
 
-`os.loadAPI("gTurtle")`
+## Usage ##
+```
+os.loadAPI("gTurtle")
+```
