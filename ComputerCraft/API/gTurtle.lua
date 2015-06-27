@@ -79,7 +79,7 @@ function digMove(dir, distance, grav, attack)
 end
 
 -- moves the turtle waiting for blockages to move
-function ove(dir, distance, attack)
+function move(dir, distance, attack)
   local modDir = dir
   -- align turtle
   if dir == "left" or dir == "right" then
