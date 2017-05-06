@@ -13,7 +13,6 @@ if not args[1] then
   print("No url given")
   return false
 end
-
 local url = args[1]
 
 -- check for filename
